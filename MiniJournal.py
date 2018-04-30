@@ -7,7 +7,7 @@ def get_io():
 	print("  "+options['save']+" - save\n  "+options['quit']+" - quit\n-----")
 	while True:	
 		new_line = input('\t>> ')
-		if new_line == 's':
+		if new_line == options['save']:
 			now = datetime.datetime.now()
 			now_text = now.strftime("%Y-%m-%d-%H-%M")
 			file_name = now_text + ".txt"
@@ -21,7 +21,7 @@ def get_io():
 				print("Error saving file.")
 				print("Returned to editor.")
 				print(entry_text)
-		elif new_line == 'q':
+		elif new_line == options['quit']:
 			print("Closed entry without saving.\nReturned to main menu.")
 			break
 		else:
